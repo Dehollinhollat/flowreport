@@ -1,0 +1,81 @@
+consultant	tache	statut	heures	priorite	semaine
+Alice Martin	Audit SI client - phase diagnostic	Terminé	12	Haute	S13
+Alice Martin	Rédaction note de cadrage	Terminé	6	Haute	S13
+Alice Martin	Atelier de lancement client	Terminé	4	Haute	S13
+Alice Martin	Préparation support de présentation	Terminé	5	Moyenne	S13
+Alice Martin	Veille réglementaire RGPD	En cours	3	Basse	S13
+Bob Koffi	Développement module reporting	Terminé	10	Haute	S13
+Bob Koffi	Recette fonctionnelle v1	En cours	7	Haute	S13
+Bob Koffi	Correction bugs interface	Terminé	4	Moyenne	S13
+Bob Koffi	Documentation technique	En cours	5	Moyenne	S13
+Bob Koffi	Réunion synchronisation équipe	Terminé	2	Basse	S13
+Claire Dubois	Analyse des besoins métier	Terminé	8	Haute	S13
+Claire Dubois	Rédaction user stories	Terminé	6	Haute	S13
+Claire Dubois	Coordination avec équipe client	Bloqué	3	Haute	S13
+Claire Dubois	Mise à jour planning projet	Terminé	4	Moyenne	S13
+Claire Dubois	Préparation comité de pilotage	En cours	5	Haute	S13
+David Ngo	Modélisation base de données	Terminé	11	Haute	S13
+David Ngo	Intégration API externe	Bloqué	6	Haute	S13
+David Ngo	Tests unitaires module auth	Terminé	5	Moyenne	S13
+David Ngo	Déploiement environnement recette	En cours	7	Haute	S13
+David Ngo	Revue de code avec Alice	Terminé	3	Basse	S13
+Alice Martin	Présentation résultats diagnostic	Terminé	5	Haute	S14
+Alice Martin	Rédaction livrables phase 1	Terminé	8	Haute	S14
+Alice Martin	Atelier de co-construction client	Terminé	6	Haute	S14
+Alice Martin	Analyse des risques projet	En cours	4	Haute	S14
+Alice Martin	Mise à jour note de cadrage	Terminé	3	Moyenne	S14
+Bob Koffi	Recette fonctionnelle v2	En cours	8	Haute	S14
+Bob Koffi	Développement module tableau de bord	En cours	10	Haute	S14
+Bob Koffi	Correction anomalies recette	Terminé	5	Haute	S14
+Bob Koffi	Documentation utilisateur	Bloqué	4	Moyenne	S14
+Bob Koffi	Réunion point d'avancement	Terminé	2	Basse	S14
+Claire Dubois	Animation atelier utilisateurs	Terminé	7	Haute	S14
+Claire Dubois	Rédaction compte-rendu comité	Terminé	5	Haute	S14
+Claire Dubois	Suivi plan d'actions client	Bloqué	3	Haute	S14
+Claire Dubois	Mise à jour matrice des risques	Terminé	4	Moyenne	S14
+Claire Dubois	Préparation formation utilisateurs	En cours	6	Moyenne	S14
+David Ngo	Optimisation requêtes SQL	Terminé	9	Haute	S14
+David Ngo	Intégration API externe	Terminé	8	Haute	S14
+David Ngo	Tests de performance	En cours	6	Haute	S14
+David Ngo	Mise en production module v1	Bloqué	5	Haute	S14
+David Ngo	Support technique équipe client	Terminé	3	Moyenne	S14
+Alice Martin	Suivi recommandations phase 1	Terminé	6	Haute	S15
+Alice Martin	Rédaction rapport d'avancement	Terminé	5	Haute	S15
+Alice Martin	Réunion comité de pilotage	Terminé	4	Haute	S15
+Alice Martin	Analyse ROI projet	En cours	7	Haute	S15
+Alice Martin	Benchmark solutions du marché	Terminé	4	Moyenne	S15
+Bob Koffi	Finalisation tableau de bord	Terminé	12	Haute	S15
+Bob Koffi	Tests d'intégration complets	En cours	8	Haute	S15
+Bob Koffi	Formation équipe technique client	Terminé	5	Moyenne	S15
+Bob Koffi	Rédaction guide de déploiement	En cours	4	Moyenne	S15
+Bob Koffi	Réunion go/no-go mise en production	Terminé	2	Haute	S15
+Claire Dubois	Formation utilisateurs clés	Terminé	8	Haute	S15
+Claire Dubois	Rédaction guide utilisateur	En cours	6	Haute	S15
+Claire Dubois	Suivi des tickets support	Bloqué	4	Haute	S15
+Claire Dubois	Mise à jour documentation projet	Terminé	3	Moyenne	S15
+Claire Dubois	Préparation bilan de projet	En cours	5	Haute	S15
+David Ngo	Déploiement en production	Terminé	10	Haute	S15
+David Ngo	Monitoring post-déploiement	En cours	6	Haute	S15
+David Ngo	Correction bugs production	Terminé	7	Haute	S15
+David Ngo	Optimisation performances	Bloqué	5	Haute	S15
+David Ngo	Documentation architecture finale	En cours	4	Moyenne	S15
+Alice Martin	Bilan phase 2 et recommandations	En cours	8	Haute	S16
+Alice Martin	Rédaction rapport final client	En cours	10	Haute	S16
+Alice Martin	Présentation bilan projet	Terminé	4	Haute	S16
+Alice Martin	Capitalisation retours d'expérience	En cours	5	Moyenne	S16
+Alice Martin	Proposition phase 3	Bloqué	6	Haute	S16
+Bob Koffi	Clôture recette finale	En cours	9	Haute	S16
+Bob Koffi	Livraison code source documenté	En cours	7	Haute	S16
+Bob Koffi	Support post-déploiement J+7	Terminé	5	Haute	S16
+Bob Koffi	Archivage documentation technique	En cours	3	Basse	S16
+Bob Koffi	Réunion rétrospective technique	Terminé	2	Moyenne	S16
+Claire Dubois	Bilan satisfaction utilisateurs	En cours	6	Haute	S16
+Claire Dubois	Clôture administrative projet	Bloqué	4	Haute	S16
+Claire Dubois	Rédaction bilan COPIL final	En cours	7	Haute	S16
+Claire Dubois	Archivage livrables projet	Terminé	3	Moyenne	S16
+Claire Dubois	Réunion débriefing équipe	Terminé	2	Basse	S16
+David Ngo	Stabilisation environnement production	En cours	8	Haute	S16
+David Ngo	Transfert de compétences client	Terminé	6	Haute	S16
+David Ngo	Documentation exploitation	En cours	5	Haute	S16
+David Ngo	Tests de régression post-patch	Bloqué	4	Haute	S16
+David Ngo	Rétrospective architecture	En cours	3	Moyenne	S16
