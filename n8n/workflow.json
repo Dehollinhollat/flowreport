@@ -1,0 +1,198 @@
+{
+  "name": "FlowReport - Rapport hebdomadaire",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9e3b5e82-961f-4dd7-b14f-d37d3e525365",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1NH2__TCf4OTvGILZN-GjOnaFAHHpgFSCuhfO49HN0RY",
+          "mode": "list",
+          "cachedResultName": "FlowReport - Données activité",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1NH2__TCf4OTvGILZN-GjOnaFAHHpgFSCuhfO49HN0RY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 746450312,
+          "mode": "list",
+          "cachedResultName": "activite_equipe",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1NH2__TCf4OTvGILZN-GjOnaFAHHpgFSCuhfO49HN0RY/edit#gid=746450312"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "13194a6a-b4b4-4098-88de-473d15395bcb",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "uSEUftqwiYKrAsbK",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.all().map(item => item.json);\n\nconst total = rows.length;\nconst terminees = rows.filter(r => r.statut === \"Terminé\").length;\nconst bloquees = rows.filter(r => r.statut === \"Bloqué\").length;\nconst hautePrioNonTerminees = rows.filter(r => r.priorite === \"Haute\" && r.statut !== \"Terminé\").length;\n\nconst heuresParConsultant = {};\nrows.forEach(r => {\n  const h = parseFloat(r.heures) || 0;\n  heuresParConsultant[r.consultant] = (heuresParConsultant[r.consultant] || 0) + h;\n});\n\nconst totalHeures = Object.values(heuresParConsultant).reduce((a, b) => a + b, 0);\nconst tauxCompletion = ((terminees / total) * 100).toFixed(1);\nconst date = new Date().toLocaleDateString('fr-FR');\n\nconst tableauConsultants = Object.entries(heuresParConsultant)\n  .map(([nom, h]) => `| ${nom} | ${h}h |`)\n  .join('\\n');\n\nconst prompt = `Tu es un assistant spécialisé dans le reporting de projets ESN. Génère un rapport d'activité hebdomadaire professionnel basé sur ces KPIs présentés sous forme de tableaux :\n\n## KPIs Globaux\n\n| Métrique | Valeur |\n|----------|--------|\n| Taux de complétion | ${tauxCompletion}% |\n| Total heures équipe | ${totalHeures}h |\n| Tâches bloquées | ${bloquees} |\n| Tâches haute priorité non terminées | ${hautePrioNonTerminees} |\n\n## Heures par Consultant\n\n| Consultant | Heures |\n|------------|--------|\n${tableauConsultants}\n\nLe rapport doit inclure : un résumé global, les points d'attention, et une recommandation pour le manager.\n\n**Date rapport** : ${date}\n**Préparé par** : Déhollin HOLLAT, Chef de Projet Data IA Projet FlowReport`;\n\nreturn [{\n  json: {\n    tauxCompletion: parseFloat(tauxCompletion),\n    totalHeures,\n    heuresParConsultant,\n    tachesBloquees: bloquees,\n    hautePrioNonTerminees,\n    requestBody: {\n      model: \"claude-haiku-4-5-20251001\",\n      max_tokens: 1024,\n      messages: [{ role: \"user\", content: prompt }]\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "273683c6-82f0-4bfe-99c6-e293c6a1bd2a",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "VOTRE_CLE_API_ANTHROPIC"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "=json",
+        "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        592,
+        0
+      ],
+      "id": "b5733f91-7195-46c0-9bcb-3ad183562cce",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "sendTo": "dehollin.hollat@outlook.fr",
+        "subject": "Rapport d'activité hebdomadaire - FlowReport",
+        "emailType": "text",
+        "message": "={{ $json.content[0].text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        0
+      ],
+      "id": "6f47e256-3616-4166-99e3-68d328e3f5f0",
+      "name": "Send a message",
+      "webhookId": "af69c575-c9b7-4862-814b-f868f5f37a11",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "0RQVlQYatmyOYjdD",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "8ebeac78-d448-4c82-b65f-13bf80870ebe",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9c8d7fac769f8020e2b93ba5891ebd5840fa0ad16f0335465d2d7823e8b8ba71"
+  },
+  "id": "vyRRb2NncbRG0DI1",
+  "tags": []
+}
