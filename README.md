@@ -43,7 +43,13 @@ flowreport/
 └── README.md
 ```
 
-## 📊 Exemple de rapport généré
+## 🖼️ Aperçu
+
+### Pipeline n8n
+![Pipeline n8n](docs/pipeline_n8n.png)
+
+### Rapport généré par IA
+![Rapport email](docs/rapport_email.png)
 
 Voir [`output/sample_report.txt`](output/sample_report.txt)
 
