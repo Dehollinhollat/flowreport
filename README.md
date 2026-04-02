@@ -1,6 +1,6 @@
 # 🟠 FlowReport — Pipeline d'automatisation IA de rapports de performance
 
-> Projet personnel réalisé dans le cadre d'une formation MBA Big Data & IA
+> Projet personnel réalisé pour dévélopper mes compétences dans la Data et l'IA
 
 ## 📌 Problématique
 
