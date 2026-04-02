@@ -1,0 +1,57 @@
+const rows = $input.all().map(item => item.json);
+
+const total = rows.length;
+const terminees = rows.filter(r => r.statut === "Terminé").length;
+const bloquees = rows.filter(r => r.statut === "Bloqué").length;
+const hautePrioNonTerminees = rows.filter(r => r.priorite === "Haute" && r.statut !== "Terminé").length;
+
+const heuresParConsultant = {};
+rows.forEach(r => {
+  const h = parseFloat(r.heures) || 0;
+  heuresParConsultant[r.consultant] = (heuresParConsultant[r.consultant] || 0) + h;
+});
+
+const totalHeures = Object.values(heuresParConsultant).reduce((a, b) => a + b, 0);
+const tauxCompletion = ((terminees / total) * 100).toFixed(1);
+const date = new Date().toLocaleDateString('fr-FR');
+
+const tableauConsultants = Object.entries(heuresParConsultant)
+  .map(([nom, h]) => `| ${nom} | ${h}h |`)
+  .join('\n');
+
+const prompt = `Tu es un assistant spécialisé dans le reporting de projets ESN. Génère un rapport d'activité hebdomadaire professionnel basé sur ces KPIs présentés sous forme de tableaux :
+
+## KPIs Globaux
+
+| Métrique | Valeur |
+|----------|--------|
+| Taux de complétion | ${tauxCompletion}% |
+| Total heures équipe | ${totalHeures}h |
+| Tâches bloquées | ${bloquees} |
+| Tâches haute priorité non terminées | ${hautePrioNonTerminees} |
+
+## Heures par Consultant
+
+| Consultant | Heures |
+|------------|--------|
+${tableauConsultants}
+
+Le rapport doit inclure : un résumé global, les points d'attention, et une recommandation pour le manager.
+
+**Date rapport** : ${date}
+**Préparé par** : Déhollin HOLLAT, Chef de Projet Data IA Projet FlowReport`;
+
+return [{
+  json: {
+    tauxCompletion: parseFloat(tauxCompletion),
+    totalHeures,
+    heuresParConsultant,
+    tachesBloquees: bloquees,
+    hautePrioNonTerminees,
+    requestBody: {
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1024,
+      messages: [{ role: "user", content: prompt }]
+    }
+  }
+}];
