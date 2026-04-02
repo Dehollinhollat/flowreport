@@ -1,0 +1,81 @@
+# RAPPORT D'ACTIVITÉ HEBDOMADAIRE
+## Projet FlowReport - Semaine du 02/04/2026
+
+---
+
+## 📊 RÉSUMÉ GLOBAL
+
+### Performance Générale
+- **Taux de complétion** : 52,5% (en retrait de la cible habituelle)
+- **Volume de travail** : 449 heures mobilisées par l'équipe
+- **Effectif** : 4 consultants à pleine charge
+
+### Distribution des Ressources
+L'équipe affiche une bonne homogénéité d'engagement avec une moyenne
+de **112,25 h/consultant** :
+
+| Consultant | Charge | Variance |
+|------------|--------|----------|
+| David Ngo | 121h | +8h (+7%) |
+| Alice Martin | 115h | +3h (+3%) |
+| Bob Koffi | 114h | +2h (+2%) |
+| Claire Dubois | 99h | -13h (-12%) |
+
+---
+
+## ⚠️ POINTS D'ATTENTION CRITIQUES
+
+### 1. **Taux de complétion insuffisant** 🔴
+- 52,5% seulement des livrables attendus sont finalisés
+- Écart significatif par rapport aux objectifs hebdomadaires
+- **Impact** : risque de décalage du planning global du projet
+
+### 2. **Volume de tâches bloquées** 🔴
+- **10 tâches bloquées** identifiées
+- Ces blocages paralysent l'avancement malgré les 449h investies
+- **Probable cause** : dépendances inter-équipes, arbitrages en
+attente, ou problèmes techniques non résolus
+
+### 3. **Backlog haute priorité important** 🟠
+- **29 tâches haute priorité non terminées**
+- Accumulation de travail critique non adressé
+- **Risque** : Dette technique ou retard sur les jalons clés
+
+### 4. **Déséquilibre de charge chez Claire Dubois** 🟡
+- -13h par rapport à la moyenne (-12%)
+- À valider : absence, déploiement sur autre projet, ou sous-allocation ?
+
+---
+
+## 💡 RECOMMANDATIONS
+
+### Pour le Manager ESN
+
+**Action immédiate (48h) :**
+1. **Déblocage critique** : Identifier et résoudre les 10 tâches bloquées
+   - Réunion de déblocage avec parties prenantes externes si nécessaire
+   - Escalader auprès des équipes dépendantes
+
+2. **Clarification Claire Dubois** : Valider sa charge effective et
+ajuster si sous-utilisée
+
+**Court terme (semaine prochaine) :**
+3. **Priorisation** : Trier les 29 tâches haute priorité par criticité
+   - Focus sur les 10 tâches critiques du chemin critique
+   - Reporter les tâches de priorité médiane si nécessaire
+
+4. **Revue de productivité** :
+   - 449h investies pour 52,5% de complétion = ~1,9h par point de complétion
+   - Analyser les goulots d'étranglement (qualité, rework, interruptions)
+
+**Recommandation budgétaire :**
+- Maintenir la charge à ~450h/semaine avec priorité au déblocage
+plutôt qu'à l'ajout de tâches
+- Reporter les nouveaux livrables tant que le taux de complétion ne
+remonte pas à 70%+
+
+---
+
+**Préparé par** : Déhollin HOLLAT
+**Rôle** : Chef de Projet Data IA - Projet FlowReport
+**Date** : 02/04/2026
