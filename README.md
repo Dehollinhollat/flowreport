@@ -1,12 +1,27 @@
-# 🟠 FlowReport — Pipeline d'automatisation IA de rapports de performance
+# 🟠 FlowReport : Pipeline d'automatisation IA de rapports de performance
 
-> Projet personnel réalisé pour dévélopper mes compétences dans la Data et l'IA
+> Projet personnel réalisé dans le cadre d'une formation MBA Big Data & IA,
+> pour développer des compétences concrètes en automatisation et IA générative.
 
 ## 📌 Problématique
 
-Dans les ESN, les managers passent 2 à 3h par semaine à consolider
-les données d'activité de leurs équipes et rédiger des rapports manuellement.
-FlowReport automatise ce cycle de bout en bout.
+Dans les ESN (Entreprises de Services du Numérique), le suivi d'activité
+des équipes projet est une tâche critique mais chronophage. Chaque semaine,
+les managers doivent :
+
+- Collecter les données d'activité auprès de chaque consultant ;
+- Consolider manuellement les informations dans des tableaux de bord ;
+- Analyser les KPIs : taux de complétion, tâches bloquées, charge par consultant ;
+- Rédiger un rapport de performance à destination de la direction ou du client.
+
+Ce processus représente **2 à 3 heures par semaine** de travail répétitif,
+source d'erreurs humaines et difficilement scalable à mesure que l'équipe grandit.
+
+**FlowReport automatise ce cycle de bout en bout** : de la lecture des données
+à la génération du rapport narratif par l'IA, jusqu'à son envoi automatique
+au manager chaque lundi matin — sans aucune intervention humaine.
+
+**Résultat : réduction estimée du temps de reporting de 80%.**
 
 ## ⚙️ Architecture du pipeline
 ```
