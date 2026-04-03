@@ -32,15 +32,24 @@ FlowReport automatise ce cycle de bout en bout.
 ## 📂 Structure du repo
 ```
 flowreport/
+│
 ├── data/
-│   └── sample_data.csv       ← Données simulées (80 tâches, 4 consultants)
+│   └── sample_data.csv          ← 80 tâches, 4 consultants, 4 semaines
+│
 ├── n8n/
-│   └── workflow.json         ← Export du workflow n8n (clé API à configurer)
+│   └── workflow.json            ← Pipeline exporté (clé API remplacée par VOTRE_CLE_API)
+│
 ├── prompts/
-│   └── report_prompt.txt     ← Prompt Claude documenté
+│   └── report_prompt.txt        ← Prompt Claude documenté et versionné
+│
 ├── output/
-│   └── sample_report.txt     ← Exemple de rapport généré
-└── README.md
+│   └── sample_report.html       ← Rapport HTML final généré par l'IA
+│
+├── docs/
+│   ├── pipeline_n8n.png         ← Capture du workflow n8n
+│   └── rapport_email.png        ← Capture du rendu email HTML
+│
+└── README.md                    ← Documentation pro + architecture + screenshots
 ```
 
 ## 🖼️ Aperçu
