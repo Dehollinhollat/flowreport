@@ -19,7 +19,7 @@ const tableauConsultants = Object.entries(heuresParConsultant)
   .map(([nom, h]) => `| ${nom} | ${h}h |`)
   .join('\n');
 
-const prompt = `Tu es un assistant spécialisé dans le reporting de projets ESN. Génère un rapport d'activité hebdomadaire professionnel basé sur ces KPIs présentés sous forme de tableaux :
+const prompt = `Tu es un assistant spécialisé dans le reporting de projets ESN. Génère un rapport d'activité hebdomadaire en HTML propre et professionnel basé sur ces KPIs :
 
 ## KPIs Globaux
 
@@ -36,10 +36,26 @@ const prompt = `Tu es un assistant spécialisé dans le reporting de projets ESN
 |------------|--------|
 ${tableauConsultants}
 
-Le rapport doit inclure : un résumé global, les points d'attention, et une recommandation pour le manager.
+Le rapport HTML doit :
+Le rapport HTML doit être compatible Gmail avec ces contraintes techniques strictes :
+- Utiliser des tableaux HTML pour la mise en page (pas de flexbox ni CSS grid)
+- Utiliser uniquement des styles inline (pas de classes CSS externes)
+- Utiliser des couleurs de fond solides (pas de linear-gradient)
+- Cartes KPIs : fond vert (#27AE60) pour taux complétion et heures, fond orange (#E67E22) pour tâches bloquées, fond rouge (#C0392B) pour haute priorité non terminées, texte blanc en gras
+- Barres de progression : simulées avec des tableaux imbriqués et des cellules colorées
+- Header : fond #1F4E79 texte blanc centré avec titre et date
+- Footer : fond #1F4E79 texte blanc centré avec le nom du préparateur
+- Toutes les sections avec bordure gauche colorée et fond légèrement teinté
+- Police Arial ou sans-serif uniquement
+- Inclure un résumé global, les points d'attention et les recommandations. Rien d’autre.
+- Être responsive et lisible sur mobile
+- Retourne uniquement le code HTML complet, sans markdown, sans balises de code
+- Le rapport doit être COMPLET et se terminer obligatoirement par le footer avec le nom du préparateur. Ne jamais couper le HTML à mi-chemin.
+- Ne pas inclure de tableau récapitulatif des KPIs en fin de rapport, les KPIs sont déjà présentés en début de rapport
 
-**Date rapport** : ${date}
-**Préparé par** : Déhollin HOLLAT, Chef de Projet Data IA Projet FlowReport`;
+
+Date : ${date}
+Préparé par : Déhollin HOLLAT, Chef de Projet Data IA Projet FlowReport`;
 
 return [{
   json: {
@@ -50,7 +66,7 @@ return [{
     hautePrioNonTerminees,
     requestBody: {
       model: "claude-haiku-4-5-20251001",
-      max_tokens: 1024,
+      max_tokens: 8192,
       messages: [{ role: "user", content: prompt }]
     }
   }
