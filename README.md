@@ -46,6 +46,7 @@ au manager chaque lundi matin — sans aucune intervention humaine.
 
 ## 📂 Structure du repo
 ```
+```
 flowreport/
 │
 ├── data/
@@ -62,9 +63,11 @@ flowreport/
 │
 ├── docs/
 │   ├── pipeline_n8n.png         ← Capture du workflow n8n
-│   └── rapport_email.png        ← Capture du rendu email HTML
+│   ├── rapport_email.png        ← Capture du rendu email HTML
+│   └── méthodologie.md          ← Approche projet, phases, décisions techniques
 │
 └── README.md                    ← Documentation pro + architecture + screenshots
+```
 ```
 
 ## 🖼️ Aperçu
