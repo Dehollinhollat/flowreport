@@ -46,7 +46,6 @@ au manager chaque lundi matin — sans aucune intervention humaine.
 
 ## 📂 Structure du repo
 ```
-```
 flowreport/
 │
 ├── data/
@@ -67,7 +66,7 @@ flowreport/
 │   └── méthodologie.md          ← Approche projet, phases, décisions techniques
 │
 └── README.md                    ← Documentation pro + architecture + screenshots
-```
+
 ```
 
 ## 🖼️ Aperçu
