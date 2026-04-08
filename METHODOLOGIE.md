@@ -34,7 +34,7 @@ améliore la lisibilité et l'impact pour le manager destinataire.
 
 ## 3. Architecture du pipeline
 
-Google Sheets → Schedule Trigger → Code Node (KPIs) → HTTP Request (Claude API) → Gmail
+### Google Sheets → Schedule Trigger → Code Node (KPIs) → HTTP Request (Claude API) → Gmail
 
 Chaque nœud a une responsabilité unique — principe de séparation
 des responsabilités appliqué à l'automatisation.
