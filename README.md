@@ -88,4 +88,3 @@ par votre propre clé via les credentials n8n.
 ## 👤 Auteur
 
 **Déhollin HOLLAT** — Chef de Projet Data IA  
-Formation MBA Big Data & IA
