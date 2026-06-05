@@ -1,9 +1,9 @@
-# 🟠 FlowReport : Pipeline d'automatisation IA de rapports de performance
+# FlowReport : Pipeline d'automatisation IA de rapports de performance
 
 > Projet personnel réalisé dans le cadre d'une formation MBA Big Data & IA,
 > pour développer des compétences concrètes en automatisation et IA générative.
 
-## 📌 Problématique
+## Problématique
 
 Dans les ESN (Entreprises de Services du Numérique), le suivi d'activité
 des équipes projet est une tâche critique mais chronophage. Chaque semaine,
@@ -23,19 +23,19 @@ au manager chaque lundi matin — sans aucune intervention humaine.
 
 **Résultat : réduction estimée du temps de reporting de 80%.**
 
-## ⚙️ Architecture du pipeline
+## Architecture du pipeline
 ```
 [Google Sheets] → [n8n] → [Calcul KPIs] → [API Claude] → [Rapport email]
 ```
 
-## 🚀 Fonctionnalités
+## Fonctionnalités
 
 - Lecture automatique des données d'activité depuis Google Sheets
 - Calcul des KPIs : taux de complétion, heures par consultant, tâches bloquées
 - Génération d'un rapport narratif par IA (Claude API)
 - Envoi automatique par email chaque lundi à 8h
 
-## 🛠️ Stack technique
+## Stack technique
 
 | Outil | Rôle |
 |---|---|
@@ -44,7 +44,7 @@ au manager chaque lundi matin — sans aucune intervention humaine.
 | API Claude (Anthropic) | Génération du rapport IA |
 | Gmail | Envoi automatique |
 
-## 📂 Structure du repo
+## Structure du repo
 ```
 flowreport/
 │
@@ -69,7 +69,7 @@ flowreport/
 
 ```
 
-## 🖼️ Aperçu
+## Aperçu
 
 ### Pipeline n8n
 ![Pipeline n8n](docs/pipeline_n8n.png)
@@ -79,12 +79,12 @@ flowreport/
 
 Voir [`output/sample_report.txt`](output/sample_report.txt)
 
-## ⚠️ Sécurité
+## Sécurité
 
 Ne jamais committer de clé API.
 Remplacer `VOTRE_CLE_API_ANTHROPIC` dans `n8n/workflow.json`
 par votre propre clé via les credentials n8n.
 
-## 👤 Auteur
+## Auteur
 
 **Déhollin HOLLAT** — Chef de Projet Data IA  
